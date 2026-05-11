@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolucija OSI modela u suvremenim mrežama V2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent: #38bdf8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: -3rem auto 2rem;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-top: 0;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--text-main);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .image-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .highlight {
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight strong {
+            color: var(--primary-dark);
+        }
+
+        .sources {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .sources h2 {
+            color: #38bdf8;
+            border-bottom-color: #334155;
+        }
+
+        .sources ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sources li {
+            margin-bottom: 1.2rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .sources li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
+        .sources a {
+            color: #38bdf8;
+            text-decoration: none;
+            word-break: break-all;
+            display: inline-block;
+            margin-top: 0.3rem;
+            font-size: 0.95rem;
+            border-bottom: 1px dashed rgba(56, 189, 248, 0.4);
+        }
+
+        .sources a:hover {
+            color: #7dd3fc;
+            border-bottom-style: solid;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 3rem 1rem; }
+            .container { padding: 0 1rem; margin-top: -2rem; }
+            .card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Evolucija OSI modela</h1>
+        <p>Od teorijskog okvira do arhitekture suvremenih mreža</p>
+    </header>
+
+    <div class="container">
+        <!-- Sekcija 1: Uvod -->
+        <div class="card">
+            <h2>Uvod: Što je zapravo OSI?</h2>
+            <p>OSI (Open Systems Interconnection) referentni model, razvijen od strane ISO ranih 1980-ih, osmišljen je kao univerzalni standard za mrežnu komunikaciju.</p>
+            
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Mrežni serveri">
+            </div>
+            <div class="image-caption">Slika 1: Fizički sloj suvremenih podatkovnih centara (Izvor: Unsplash)</div>
+            
+            <p>Danas se OSI model primarno koristi kao <strong>pedagoški alat</strong> i referentni okvir za razumijevanje i dijagnostiku mreža, dok stvarnim svijetom interneta dominira TCP/IP skup protokola.</p>
+        </div>
+
+        <!-- Sekcija 2: OSI nasuprot TCP/IP -->
+        <div class="card">
+            <h2>OSI vs. TCP/IP: Pobjeda pragmatizma ("Rat protokola")</h2>
+            <p>Tijekom 1980-ih godina, u svijetu računalnih mreža vodila se povijesna bitka poznata kao <strong>Protocol Wars</strong> (Rat protokola). Ova bitka definirala je arhitekturu interneta kakvog danas poznajemo.</p>
+            
+            <h3>OSI Model (Teoretski ideal)</h3>
+            <p>OSI je bio projekt podržan od strane ISO-a. Njegov razvoj tekao je metodom <em>"odozgo prema dolje" (top-down)</em>. Odbori su godinama pisali tisuće stranica strogih specifikacija, pokušavajući predvidjeti svaki mogući mrežni scenarij prije pisanja koda. Rezultat je bio savršen, ali nevjerojatno spor, birokratiziran i prekompleksan model.</p>
+            
+            <h3>TCP/IP (Inženjerska praksa)</h3>
+            <p>S druge strane, TCP/IP je financirao američki DoD kroz ARPANET. Razvijali su ga inženjeri vođeni praksom <em>"odozdo prema gore" (bottom-up)</em>. Prvo bi napisali softver, testirali ga u stvarnom okruženju, a tek onda bi ono što radi proglasili standardom. Model je imao samo 4 sloja i bio je iznimno fleksibilan.</p>
+
+            <h3>Zašto je TCP/IP nadvladao?</h3>
+            <p>Pobjeda TCP/IP-a nije bila rezultat tehnološke superiornosti u dizajnu, već nevjerojatnog pragmatizma. Ključni faktori pobjede bili su:</p>
+            <ul>
+                <li><strong>Besplatna distribucija i UNIX:</strong> ARPA je financirala integraciju TCP/IP protokola u <em>Berkeley Software Distribution (BSD) UNIX</em>. Taj sustav se besplatno dijelio sveučilištima. Dok se OSI još uvijek teoretizirao na papiru, akademska zajednica već je izgradila funkcionalnu globalnu mrežu koristeći TCP/IP.</li>
+                <li><strong>Brzina implementacije:</strong> TCP/IP rješavao je stvarne probleme u stvarnom vremenu. Nije ga zanimala savršena definicija sesijskog sloja, zanimalo ga je kako stabilno prenijeti podatke s točke A na točku B.</li>
+            </ul>
+
+            <p>Ovu inženjersku filozofiju najbolje je sažeo pionir interneta David Clark 1992. godine:</p>
+
+            <div class="highlight">
+                <em>"Odbacujemo kraljeve, predsjednike i glasanje. Vjerujemo u grubi konsenzus i kod koji radi (running code)."</em>
+                <br><br><strong>— David D. Clark, MIT</strong>
+            </div>
+
+            <p><strong>Epilog:</strong> OSI model izgubio je rat za "jezik" interneta, ali je dobio rat u učionicama. Danas se TCP/IP koristi za prijenos podataka, dok se OSI koristi isključivo kao pedagoški i dijagnostički alat – mentalna mapa koja mrežnim inženjerima omogućuje brže lociranje i rješavanje problema.</p>
+        </div>
+
+        <!-- Sekcija 3: Evolucija u suvremenim mrežama -->
+        <div class="card">
+            <h2>Moderni trendovi: Brisanje granica između slojeva</h2>
+            <p>U suvremenim mrežnim arhitekturama, stroga podjela na sedam slojeva OSI modela sve više blijedi. Inženjeri optimiziraju performanse spajanjem funkcija više slojeva u jedan vertikalni stog.</p>
+
+            <h3>1. QUIC i HTTP/3 (Konvergencija Transportnog i Prezentacijskog sloja)</h3>
+            <p>Tradicionalni pristup zahtijeva zasebne korake za TCP (Sloj 4) i TLS (Sloj 6). <strong>QUIC</strong> to mijenja integracijom enkripcije izravno u transportni mehanizam. Time se drastično smanjuje broj "rukovanja" (handshake) potrebnih za uspostavu sigurne veze, što rezultira bržim učitavanjem web stranica u nestabilnim mobilnim mrežama.</p>
+
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Globalna mreža">
+            </div>
+            <div class="image-caption">Slika 2: Suvremeni protokoli zahtijevaju maksimalnu učinkovitost i nisku latenciju</div>
+
+            <h3>2. SDN (Software-Defined Networking) i Programabilnost</h3>
+            <p>SDN predstavlja radikalnu promjenu na <strong>Mrežnom sloju (3)</strong>. Umjesto da svaki router samostalno donosi odluke, inteligencija se seli na centralizirani softverski kontroler. To omogućuje mrežama da se dinamički prilagođavaju prometu, slično kao što se virtualni strojevi prilagođavaju resursima u cloudu.</p>
+            
+            <h3>3. 5G i Network Slicing (Virtualizacija Fizičkog sloja)</h3>
+            <p>Tehnologija <strong>Network Slicing</strong> u 5G mrežama omogućuje da se jedna fizička infrastruktura (Sloj 1) podijeli na više virtualnih mreža ("kriški"). Svaka kriška može biti optimizirana za specifičan zadatak – npr. jedna za nisku latenciju (autonomna vozila), a druga za visoku propusnost (4K streaming).</p>
+
+            <div class="highlight">
+                <strong>Zašto je ovo važno?</strong>
+                <br>Brisanje granica omogućuje "Cross-layer" optimizaciju. Na primjer, aplikacija (Sloj 7) može izravno komunicirati mrežnim uvjetima (Sloj 3) kako bi prilagodila kvalitetu videa u stvarnom vremenu, bez čekanja na standardne mehanizme povratne informacije.
+            </div>
+
+            <h3>4. Edge Computing i IoT</h3>
+            <p>U svijetu Interneta stvari (IoT), obrada podataka se pomiče s udaljenih poslužitelja (Sloj 7 u Cloudu) na same "rubove" mreže (Edge), bliže senzorima i korisnicima. Ovo briše granice između lokalne mrežne obrade i udaljene aplikacijske logike.</p>
+        </div>
+
+        <!-- Sekcija 5: Izvori -->
+        <div class="sources">
+            <h2>Izvori i literatura</h2>
+            <ul>
+                <li>
+                    <strong>Kurose, J. F., & Ross, K. W. (2021).</strong> <em>Computer Networking: A Top-Down Approach (8th Edition)</em>. Pearson.<br>
+                    <a href="https://www.pearson.com/en-us/subject-catalog/p/computer-networking-a-top-down-approach/P200000003290" target="_blank">Link na izdavača Pearson</a>
+                </li>
+                <li>
+                    <strong>Tanenbaum, A. S., & Feamster, N. (2020).</strong> <em>Computer Networks (6th Edition)</em>. Pearson.<br>
+                    <a href="https://www.pearson.com/en-us/subject-catalog/p/computer-networks/P200000003310" target="_blank">Link na izdavača Pearson</a>
+                </li>
+                <li>
+                    <strong>IETF (Internet Engineering Task Force).</strong> <em>RFC 9000: QUIC: A UDP-Based Multiplexed and Secure Transport (2021)</em>.<br>
+                    <a href="https://datatracker.ietf.org/doc/html/rfc9000" target="_blank">https://datatracker.ietf.org/doc/html/rfc9000</a>
+                </li>
+                <li>
+                    <strong>Cisco Networking Academy.</strong> <em>CCNA: Introduction to Networks (ITN)</em>.<br>
+                    <a href="https://www.netacad.com/courses/networking" target="_blank">https://www.netacad.com/courses/networking</a>
+                </li>
+                <li>
+                    <strong>Russell, A. L. (2014).</strong> <em>Open Standards and the Digital Age</em>. Cambridge University Press.<br>
+                    <a href="https://www.cambridge.org/core/books/open-standards-and-the-digital-age/467E365E24B15784E1A9D490E386D5A8" target="_blank">Link na Cambridge University Press</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Kreirano za potrebe seminara iz predmeta Računalne mreže</p>
+    </footer>
+
+</body>
+</html>
